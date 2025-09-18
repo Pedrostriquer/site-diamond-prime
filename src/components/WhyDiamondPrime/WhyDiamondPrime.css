@@ -1,0 +1,109 @@
+.why-prime-section {
+  padding: 100px 6%;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.why-prime-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+/* --- COLUNA ESQUERDA (TEXTO) --- */
+.text-column {
+  flex: 1.5;
+  text-align: left;
+}
+
+.why-prime-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1D1D1F;
+  margin: 10px 0 20px 0;
+}
+
+.why-prime-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #5a5a5c;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  border-left: 2px solid #DEAB43;
+  padding-left: 20px;
+}
+
+.differentiators-list {
+  list-style: none;
+  padding: 0; margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.differentiators-list li {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #5a5a5c;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.list-icon {
+  color: #DEAB43;
+  font-size: 1.2rem;
+  width: 25px;
+  text-align: center;
+}
+
+/* --- COLUNA DIREITA (IMAGEM) --- */
+/* Estilos ajustados para a imagem */
+.image-column {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.why-prime-diamond-image {
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  /* Efeito de brilho sutil */
+  filter: drop-shadow(0px 10px 50px rgba(200, 150, 50, 0.2));
+}
+
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 900px) {
+  .why-prime-container {
+    flex-direction: column;
+    gap: 50px;
+  }
+  
+  .text-column {
+    text-align: center;
+    order: 2;
+  }
+
+  .image-column { /* Renomeado de .svg-column */
+    order: 1;
+  }
+
+  .why-prime-paragraph {
+    border-left: none;
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .differentiators-list li {
+    justify-content: center;
+    text-align: left;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}

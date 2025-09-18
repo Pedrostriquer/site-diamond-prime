@@ -1,0 +1,181 @@
+/* Importando as fontes Montserrat e Inter */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@400;600&display=swap');
+
+.hero-section {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #ffffff;
+  padding: 0 6%;
+  overflow: hidden;
+}
+
+/* Pseudo-elemento que cria o fundo cinza diagonal */
+.hero-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4f4f5; /* Cinza claro, limpo e moderno */
+  /* Polígono de 4 pontos para criar a forma de quadrilátero */
+  clip-path: polygon(
+    25% 100%,  /* Ponto 1: Início da diagonal, na base */
+    80% 0,     /* Ponto 2: Fim da diagonal, no topo */
+    100% 0,    /* Ponto 3: Canto superior direito */
+    100% 100%  /* Ponto 4: Canto inferior direito */
+  );
+  z-index: 0;
+}
+
+/* Garante que os containers de conteúdo fiquem na frente do fundo */
+.hero-content, .hero-visual {
+  position: relative;
+  z-index: 1;
+  width: 50%;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 30px;
+  padding-right: 40px;
+}
+
+.hero-highlight {
+  font-family: 'Inter', sans-serif;
+  color: #E6AA3A;
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.hero-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3.8rem;
+  font-weight: 800;
+  color: #1D1D1F;
+  line-height: 1.2;
+}
+
+.hero-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #5a5a5c;
+  max-width: 500px;
+}
+
+
+/* --- INÍCIO DO NOVO ESTILO DO BOTÃO --- */
+
+.hero-cta-button {
+  width: 220px;
+  height: 50px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(to right,#77530a,#ffd277,#77530a,#77530a,#ffd277,#77530a);
+  background-size: 250%;
+  background-position: left;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* Camada escura interna do botão */
+.hero-cta-button::before {
+  position: absolute;
+  content: "";
+  width: 98%;
+  height: 93%;
+  border-radius: 9px;
+  transition-duration: 2s;
+  background-color: #1D1D1F;
+}
+
+/* O texto e o ícone precisam ficar na frente da camada escura */
+.hero-cta-button span,
+.hero-cta-button i {
+  position: relative;
+  z-index: 2;
+}
+
+/* Animação do gradiente ao passar o mouse */
+.hero-cta-button:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+/* Efeito de clique */
+.hero-cta-button:active {
+  transform: scale(0.95);
+}
+
+/* --- FIM DO NOVO ESTILO DO BOTÃO --- */
+
+
+/* Container da imagem à direita */
+.hero-visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.hero-diamond-image {
+  width: 100%;
+  max-width: 580px;
+  height: auto;
+  filter: drop-shadow(0px 0px 60px rgba(230, 170, 58, 0.4));
+}
+
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .hero-section {
+    flex-direction: column;
+    padding: 120px 6% 60px;
+    text-align: center;
+  }
+
+  .hero-section::before {
+    /* Em telas menores, a diagonal não funciona bem. Mudamos para uma divisão horizontal */
+    clip-path: polygon(0 45%, 100% 35%, 100% 100%, 0 100%);
+  }
+
+  .hero-content, .hero-visual {
+    width: 100%;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero-content {
+    padding-right: 0;
+    order: 2; /* Texto vem depois da imagem */
+  }
+  .hero-visual {
+    order: 1; /* Imagem vem primeiro */
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+}

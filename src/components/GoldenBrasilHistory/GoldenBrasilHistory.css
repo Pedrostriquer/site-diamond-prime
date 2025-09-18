@@ -1,0 +1,164 @@
+.gb-history-section {
+  position: relative;
+  padding: 1px 6%;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+  /* border-top: solid 8px #000000;
+  border-bottom: solid 8px #000000; */
+}
+
+/* A forma diagonal agora é apenas um container preto */
+.background-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgb(22, 27, 32); /* Fundo escuro para a forma */
+  z-index: 0;
+  clip-path: polygon(70% 0%, 100% 0, 100% 100%, 50% 100%);
+  
+  /* Permite posicionar a imagem dentro dele */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+/* --- A DIV DA IMAGEM --- */
+.shape-image {
+  width: 100%;
+  /* AQUI é o controle principal do tamanho da imagem */
+  max-width: 650px; 
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  /* Garante que a imagem fique dentro da área visível da forma */
+  /* margin-right: 5%; */
+}
+
+/* O overlay é aplicado diretamente sobre a imagem */
+.shape-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.4));
+}
+
+/* --- O RESTO DO CSS PERMANECE IGUAL --- */
+.gb-history-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 1200px;
+  padding-top: 20px;
+
+}
+
+.content-wrapper {
+  max-width: 530px;
+  text-align: left;
+}
+
+.gb-history-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #1D1D1F;
+  margin: 10px 0 20px 0;
+  width: 750px;
+}
+
+.gb-history-paragraph {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem;
+  color: #5a5a5c;
+  line-height: 1.8;
+  margin-bottom: 40px;
+  width: 650px;
+}
+
+.timeline {
+  position: relative;
+  border-left: 2px solid #e8e8e8;
+  padding: 10px 0 10px 30px;
+  margin-left: 10px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 30px;
+}
+.timeline-item:last-child {
+  margin-bottom: 0;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -41px;
+  top: 5px;
+  width: 20px;
+  height: 20px;
+  background-color: #ffffff;
+  border: 4px solid #DEAB43;
+  border-radius: 50%;
+}
+
+.timeline-year {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+  color: #DEAB43;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.timeline-event {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #5a5a5c;
+  line-height: 1.6;
+}
+
+.gb-history-quote {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-style: italic;
+  color: #1D1D1F;
+  margin-top: 40px;
+  padding-left: 20px;
+  border-left: 3px solid #DEAB43;
+  margin-left: 10px;
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 992px) {
+  .gb-history-section {
+    flex-direction: column;
+    padding: 0;
+    min-height: auto;
+  }
+  .background-shape {
+    position: relative;
+    clip-path: none;
+    min-height: 350px;
+    width: 100%;
+    justify-content: center; /* Centraliza a imagem no mobile */
+  }
+  .shape-image {
+    margin-right: 0;
+  }
+  .gb-history-container {
+    padding: 80px 6%;
+    background-color: #ffffff;
+  }
+  .content-wrapper {
+    max-width: 100%;
+  }
+}
