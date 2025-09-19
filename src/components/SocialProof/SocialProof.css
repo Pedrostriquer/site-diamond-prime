@@ -1,6 +1,8 @@
 /* --- ESTILO GERAL DA SEÇÃO --- */
 .social-proof-section {
   overflow: hidden;
+  overflow-x: hidden; 
+
 }
 
 /* --- PARTE SUPERIOR (BRANCA) - Sem alterações --- */
@@ -13,12 +15,12 @@
   align-items: center; gap: 60px;
 }
 .chart-column { flex: 1.2; }
-.chart-title { font-family: 'Montserrat', sans-serif; font-size: 1.5rem; font-weight: 600; color: #1D1D1F; text-align: center; margin-bottom: 30px; }
+.chart-title { font-family: 'Inter', sans-serif; font-size: 1.5rem; font-weight: 600; color: #1D1D1F; text-align: center; margin-bottom: 30px; }
 .content-column { flex: 1; text-align: left; }
-.proof-title { font-family: 'Montserrat', sans-serif; font-size: 2.8rem; font-weight: 800; color: #1D1D1F; margin: 10px 0 25px 0; }
+.proof-title { font-family: 'Inter', sans-serif; font-size: 2.8rem; font-weight: 800; color: #1D1D1F; margin: 10px 0 25px 0; }
 .stats-container { margin-bottom: 40px; }
 .stat-item { background-color: #f4f4f5; border-radius: 16px; padding: 25px; text-align: center; }
-.stat-value { display: block; font-family: 'Montserrat', sans-serif; font-size: 3.5rem; font-weight: 700; color: #DEAB43; line-height: 1; }
+.stat-value { display: block; font-family: 'Inter', sans-serif; font-size: 3.5rem; font-weight: 700; color: #DEAB43; line-height: 1; }
 .stat-label { display: block; font-family: 'Inter', sans-serif; font-size: 1rem; color: #5a5a5c; margin-top: 10px; }
 
 
@@ -38,7 +40,7 @@
   padding: 0 20px; /* Garante que o texto não cole nas bordas em telas menores */
 }
 .ticker-title {
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: 700;
   color: #ffffff;
@@ -94,7 +96,7 @@
 }
 
 .author-info { flex-grow: 1; }
-.author-name { font-family: 'Montserrat', sans-serif; font-weight: 600; color: #ffffff; display: block; }
+.author-name { font-family: 'Inter', sans-serif; font-weight: 600; color: #ffffff; display: block; }
 .author-status { font-family: 'Inter', sans-serif; font-size: 0.8rem; color: #a0a0a0; }
 .star-rating { color: #DEAB43; font-size: 0.9rem; }
 .testimonial-quote { font-family: 'Inter', sans-serif; font-style: italic; font-size: 1rem; color: #dcdcdc; line-height: 1.6; }

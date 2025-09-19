@@ -1,7 +1,7 @@
 .diamond-history-section {
   padding: 120px 6%;
   background-color: #ffffff;
-  overflow: hidden; /* Garante que as animações não causem scroll lateral */
+  overflow: hidden;
 }
 
 .history-container {
@@ -9,44 +9,45 @@
   margin: 0 auto;
   display: flex;
   align-items: center;
-  gap: 60px; /* Espaço entre a imagem e o texto */
+  gap: 60px;
 }
 
-/* --- Coluna da Imagem --- */
-.diamond-image-container {
+/* --- Imagem para Desktop --- */
+.diamond-image-container-desktop {
   flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+/* Esconde a imagem mobile no desktop */
+.diamond-image-container-mobile {
+  display: none;
 }
 
 .diamond-image {
   max-width: 100%;
   width: 450px;
   height: auto;
-  /* Efeito de brilho dourado, consistente com o Hero */
   filter: drop-shadow(0px 10px 60px rgba(200, 150, 50, 0.3));
 }
 
 /* --- Coluna do Texto --- */
 .diamond-text-content {
-  flex: 1.2; /* Damos um pouco mais de espaço para o texto */
+  flex: 1.2;
   text-align: left;
 }
 
 .text-highlight {
-  font-family: 'Inter', sans-serif;
-  color: #E6AA3A;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: #E6AA3A;
   display: block;
   margin-bottom: 15px;
 }
 
 .history-title {
-  font-family: 'Montserrat', sans-serif;
   font-size: 3rem;
   font-weight: 800;
   color: #1D1D1F;
@@ -55,7 +56,6 @@
 }
 
 .history-paragraph {
-  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   color: #5a5a5c;
   line-height: 1.8;
@@ -63,42 +63,59 @@
 }
 
 .diamond-quote {
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.3rem;
   font-weight: 600;
   font-style: italic;
   color: #1D1D1F;
   margin: 0;
   padding-left: 25px;
-  /* A linha dourada que destaca o quote */
   border-left: 3px solid #E6AA3A;
 }
 
 
-/* --- Responsividade --- */
+/* --- INÍCIO DA RESPONSIVIDADE --- */
 @media (max-width: 992px) {
   .history-container {
-    flex-direction: column; /* Empilha a imagem e o texto */
-    text-align: center;
+    flex-direction: column;
+    gap: 30px;
   }
 
+  /* Esconde a imagem de desktop */
+  .diamond-image-container-desktop {
+    display: none;
+  }
+  /* Mostra a imagem de mobile */
+  .diamond-image-container-mobile {
+    display: block;
+    margin: 30px auto; /* Adiciona espaço acima e abaixo */
+    text-align: center;
+  }
+  
   .diamond-text-content {
     text-align: center;
   }
 
   .diamond-quote {
-    /* Centraliza a borda e o texto do quote */
     border-left: none;
     border-top: 3px solid #E6AA3A;
     padding-left: 0;
     padding-top: 20px;
     max-width: 400px;
-    margin: 0 auto;
+    margin: 30px auto 0 auto; /* Ajusta a margem */
+  }
+  .diamond-image {
+    width: 80%;
+    max-width: 300px;
   }
 }
 
 @media (max-width: 768px) {
   .history-title {
     font-size: 2.2rem;
+  }
+  /* Diminui a imagem em telas bem pequenas */
+  .diamond-image {
+    width: 80%;
+    max-width: 300px;
   }
 }

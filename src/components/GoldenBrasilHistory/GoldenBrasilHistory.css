@@ -1,3 +1,4 @@
+/* --- ESTILOS PARA DESKTOP (Telas > 992px) --- */
 .gb-history-section {
   position: relative;
   padding: 1px 6%;
@@ -7,59 +8,42 @@
   align-items: center;
   min-height: 100vh;
   overflow: hidden;
-  /* border-top: solid 8px #000000;
-  border-bottom: solid 8px #000000; */
 }
 
-/* A forma diagonal agora é apenas um container preto */
-.background-shape {
+.background-shape-desktop {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgb(22, 27, 32); /* Fundo escuro para a forma */
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgb(22, 27, 32);
   z-index: 0;
   clip-path: polygon(70% 0%, 100% 0, 100% 100%, 50% 100%);
-  
-  /* Permite posicionar a imagem dentro dele */
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-/* --- A DIV DA IMAGEM --- */
 .shape-image {
   width: 100%;
-  /* AQUI é o controle principal do tamanho da imagem */
   max-width: 650px; 
   height: 100%;
   background-size: cover;
   background-position: center;
   position: relative;
-  /* Garante que a imagem fique dentro da área visível da forma */
-  /* margin-right: 5%; */
 }
 
-/* O overlay é aplicado diretamente sobre a imagem */
 .shape-image::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
   background: linear-gradient(to right, rgba(18, 18, 18, 0.8), rgba(18, 18, 18, 0.4));
 }
 
-/* --- O RESTO DO CSS PERMANECE IGUAL --- */
 .gb-history-container {
   position: relative;
   z-index: 1;
   width: 100%;
   max-width: 1200px;
-  padding-top: 20px;
-
 }
 
 .content-wrapper {
@@ -67,8 +51,13 @@
   text-align: left;
 }
 
+/* O banner de imagem mobile fica escondido no desktop */
+.mobile-image-banner {
+  display: none;
+}
+
+/* --- ESTILOS DE TEXTO (COMUNS) --- */
 .gb-history-title {
-  font-family: 'Montserrat', sans-serif;
   font-size: 2.8rem;
   font-weight: 800;
   color: #1D1D1F;
@@ -77,7 +66,6 @@
 }
 
 .gb-history-paragraph {
-  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   color: #5a5a5c;
   line-height: 1.8;
@@ -92,27 +80,19 @@
   margin-left: 10px;
 }
 
-.timeline-item {
-  position: relative;
-  margin-bottom: 30px;
-}
-.timeline-item:last-child {
-  margin-bottom: 0;
-}
+.timeline-item { position: relative; margin-bottom: 30px; }
+.timeline-item:last-child { margin-bottom: 0; }
 
 .timeline-dot {
   position: absolute;
-  left: -41px;
-  top: 5px;
-  width: 20px;
-  height: 20px;
+  left: -41px; top: 5px;
+  width: 20px; height: 20px;
   background-color: #ffffff;
   border: 4px solid #DEAB43;
   border-radius: 50%;
 }
 
 .timeline-year {
-  font-family: 'Montserrat', sans-serif;
   font-weight: 700;
   color: #DEAB43;
   margin-bottom: 5px;
@@ -120,14 +100,12 @@
 }
 
 .timeline-event {
-  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   color: #5a5a5c;
   line-height: 1.6;
 }
 
 .gb-history-quote {
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
   font-style: italic;
   color: #1D1D1F;
@@ -137,28 +115,61 @@
   margin-left: 10px;
 }
 
-/* --- RESPONSIVIDADE --- */
+/* --- INÍCIO DA RESPONSIVIDADE (NOVA LÓGICA) --- */
 @media (max-width: 992px) {
   .gb-history-section {
-    flex-direction: column;
-    padding: 0;
+    display: block;
+    padding: 80px 6%; /* Adiciona padding para o conteúdo não colar nas bordas */
     min-height: auto;
   }
-  .background-shape {
-    position: relative;
-    clip-path: none;
-    min-height: 350px;
-    width: 100%;
-    justify-content: center; /* Centraliza a imagem no mobile */
+
+  /* Esconde completamente a estrutura diagonal de desktop */
+  .background-shape-desktop {
+    display: none;
   }
-  .shape-image {
-    margin-right: 0;
-  }
+
   .gb-history-container {
-    padding: 80px 6%;
-    background-color: #ffffff;
+    width: 100%;
   }
+
   .content-wrapper {
     max-width: 100%;
+  }
+
+  /* Mostra e estiliza o novo banner de imagem mobile */
+  .mobile-image-banner {
+    display: block;
+    width: 100%;
+    max-width: 500px; /* << CONTROLE DA LARGURA DA IMAGEM */
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    border-radius: 16px;
+    overflow: hidden;
+    margin: 40px auto; /* Centraliza e adiciona espaçamento */
+  }
+
+  .mobile-image-banner::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(18, 18, 18, 0.3); /* Overlay mais suave */
+  }
+
+  /* Remove as larguras fixas dos textos */
+  .gb-history-title, .gb-history-paragraph {
+    width: auto;
+    text-align: center; /* Centraliza os textos */
+  }
+
+  .gb-history-quote {
+    text-align: center;
+    border-left: none;
+    padding-left: 0;
+    margin-left: 0;
+    border-top: 2px solid #DEAB43;
+    padding-top: 20px;
   }
 }

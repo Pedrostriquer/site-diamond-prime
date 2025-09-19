@@ -5,6 +5,8 @@
   padding: 35px 6%; /* Padding vertical menor para ser uma faixa compacta */
   border-top: 1px solid #333; /* Linha sutil de separação com o Hero */
   border-bottom: 1px solid #333;
+  overflow-x: hidden; 
+
 }
 
 .strip-container {
@@ -49,26 +51,30 @@
 
 
 /* --- RESPONSIVIDADE PARA TELAS MENORES --- */
+/* src/components/ProductInfo/ProductInfo.css */
+
+
+/* --- RESPONSIVIDADE PARA TELAS MENORES --- */
 @media (max-width: 1024px) {
   .strip-container {
-    flex-direction: column; /* Empilha os itens verticalmente */
-    align-items: flex-start; /* Alinha à esquerda */
-    gap: 25px; /* Espaçamento entre os itens empilhados */
+    /* Mágica do Flexbox: permite quebra de linha e centraliza */
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px 40px; /* Espaçamento vertical e horizontal */
   }
 
   .benefit-item {
-    border-right: none; /* Remove a divisória vertical */
-    padding: 0;
-    width: 100%;
+    /* Remove a divisória em telas menores */
+    border-right: none;
+    /* Garante que o padding seja igual em ambos os lados */
+    padding: 0 10px; 
+    /* Impede que um item ocupe a linha toda sozinho */
+    flex-grow: 1;
+    flex-basis: 160px; /* Largura base para cada item antes de quebrar */
+    justify-content: center; /* Centraliza o ícone e o texto dentro do item */
   }
-}
 
-@media (max-width: 768px) {
-  .product-strip-section {
-    padding: 40px 8%;
-  }
-
-  .strip-text {
-    font-size: 0.9rem;
+  .benefit-item:first-child, .benefit-item:last-child {
+    padding: 0 10px; /* Garante que o padding seja consistente */
   }
 }

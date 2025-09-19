@@ -13,12 +13,11 @@ const timelineData = [
 const GoldenBrasilHistory = () => {
   return (
     <section className="gb-history-section">
-      {/* O container da forma agora não tem a imagem diretamente */}
-      <div className="background-shape">
-        {/* A imagem agora está em uma div filha para controle de tamanho */}
+      {/* --- ESTRUTURA PARA DESKTOP --- */}
+      <div className="background-shape-desktop">
         <div
           className="shape-image"
-          style={{ backgroundImage: `url(${buildingImage})` }} // Corrigido aqui
+          style={{ backgroundImage: `url(${buildingImage})` }}
         ></div>
       </div>
 
@@ -35,6 +34,12 @@ const GoldenBrasilHistory = () => {
           <p className="gb-history-paragraph">
             Nascemos do desejo de construir pontes para a prosperidade. Hoje, a Golden Brasil é um grupo sólido, com escritórios espalhados pelo Brasil e uma comunidade com centenas de clientes que confiam em nossa visão.
           </p>
+
+          {/* --- BANNER DE IMAGEM MOVIDO PARA CÁ (APENAS PARA MOBILE) --- */}
+          <div 
+            className="mobile-image-banner"
+            style={{ backgroundImage: `url(${buildingImage})` }}
+          ></div>
 
           <div className="timeline">
             {timelineData.map((item, index) => (
@@ -54,7 +59,6 @@ const GoldenBrasilHistory = () => {
               </motion.div>
             ))}
           </div>
-          
           <blockquote className="gb-history-quote">
             “Golden Brasil: mais que uma empresa, uma comunidade de prosperidade.”
           </blockquote>

@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './WhyDiamondPrime.css';
 
-// --- ADIÇÃO: Importe a nova imagem ---
 import diamondImage from '../../img/diamond_prime_diamond (1).png';
 
 const differentiators = [
@@ -34,6 +33,11 @@ const WhyDiamondPrime = () => {
           <span className="text-highlight">Diferenciais</span>
           <h2 className="why-prime-title">Por que o Diamond Prime é Único?</h2>
           
+          {/* Imagem para a visualização em mobile */}
+          <div className="image-column-mobile">
+            <img src={diamondImage} alt="Diamante lapidado" className="why-prime-diamond-image" />
+          </div>
+
           <p className="why-prime-paragraph">
             Em um mercado de investimentos cada vez mais volátil, o Diamond Prime surge como um porto seguro. Combinamos a estabilidade milenar e o valor intrínseco do diamante com um modelo de negócio inovador que gera rentabilidade mensal, oferecendo o melhor dos dois mundos.
           </p>
@@ -48,15 +52,14 @@ const WhyDiamondPrime = () => {
           </ul>
         </motion.div>
 
-        {/* --- COLUNA DIREITA: IMAGEM (SUBSTITUINDO O SVG) --- */}
+        {/* --- COLUNA DIREITA: IMAGEM (PARA DESKTOP) --- */}
         <motion.div 
-          className="image-column" // Classe renomeada
+          className="image-column-desktop"
           variants={{
             hidden: { opacity: 0, scale: 0.8 },
             visible: { opacity: 1, scale: 1, transition: { duration: 0.8, ease: 'easeOut' } }
           }}
         >
-          {/* Tag <img> no lugar do <svg> */}
           <img src={diamondImage} alt="Diamante lapidado" className="why-prime-diamond-image" />
         </motion.div>
 

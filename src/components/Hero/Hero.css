@@ -1,5 +1,5 @@
-/* Importando as fontes Montserrat e Inter */
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&family=Inter:wght@400;600&display=swap');
+/* Importando as fontes */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
 
 .hero-section {
   position: relative;
@@ -16,29 +16,25 @@
 .hero-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: #f4f4f5; /* Cinza claro, limpo e moderno */
-  /* Polígono de 4 pontos para criar a forma de quadrilátero */
-  clip-path: polygon(
-    25% 100%,  /* Ponto 1: Início da diagonal, na base */
-    80% 0,     /* Ponto 2: Fim da diagonal, no topo */
-    100% 0,    /* Ponto 3: Canto superior direito */
-    100% 100%  /* Ponto 4: Canto inferior direito */
-  );
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: #f4f4f5;
+  clip-path: polygon(25% 100%, 80% 0, 100% 0, 100% 100%);
   z-index: 0;
 }
 
-/* Garante que os containers de conteúdo fiquem na frente do fundo */
-.hero-content, .hero-visual {
+/* NOVO CONTAINER PRINCIPAL */
+.hero-main-container {
+  display: flex;
+  width: 100%;
+  align-items: center;
   position: relative;
   z-index: 1;
-  width: 50%;
 }
 
-.hero-content {
+/* Coluna de texto no desktop */
+.hero-text-content {
+  width: 50%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -47,17 +43,28 @@
   padding-right: 40px;
 }
 
+/* Imagem para a visualização em desktop */
+.hero-visual-desktop {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* A imagem para mobile começa escondida no desktop */
+.hero-visual-mobile {
+  display: none;
+}
+
 .hero-highlight {
-  font-family: 'Inter', sans-serif;
-  color: #E6AA3A;
   font-size: 0.9rem;
   font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
+  color: #E6AA3A;
 }
 
 .hero-title {
-  font-family: 'Montserrat', sans-serif;
   font-size: 3.8rem;
   font-weight: 800;
   color: #1D1D1F;
@@ -65,15 +72,11 @@
 }
 
 .hero-subtitle {
-  font-family: 'Inter', sans-serif;
   font-size: 1.1rem;
   line-height: 1.8;
   color: #5a5a5c;
   max-width: 500px;
 }
-
-
-/* --- INÍCIO DO NOVO ESTILO DO BOTÃO --- */
 
 .hero-cta-button {
   width: 220px;
@@ -92,13 +95,11 @@
   cursor: pointer;
   transition-duration: 1s;
   overflow: hidden;
-  font-family: 'Inter', sans-serif;
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-/* Camada escura interna do botão */
 .hero-cta-button::before {
   position: absolute;
   content: "";
@@ -109,33 +110,19 @@
   background-color: #1D1D1F;
 }
 
-/* O texto e o ícone precisam ficar na frente da camada escura */
 .hero-cta-button span,
 .hero-cta-button i {
   position: relative;
   z-index: 2;
 }
 
-/* Animação do gradiente ao passar o mouse */
 .hero-cta-button:hover {
   background-position: right;
   transition-duration: 1s;
 }
 
-/* Efeito de clique */
 .hero-cta-button:active {
   transform: scale(0.95);
-}
-
-/* --- FIM DO NOVO ESTILO DO BOTÃO --- */
-
-
-/* Container da imagem à direita */
-.hero-visual {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
 }
 
 .hero-diamond-image {
@@ -146,36 +133,57 @@
 }
 
 
-/* Responsividade para telas menores */
+/* --- INÍCIO DA RESPONSIVIDADE --- */
+
+/* Para Tablets e Telas Menores (até 1024px) */
 @media (max-width: 1024px) {
   .hero-section {
+    padding: 120px 0% 80px;
+    min-height: auto;
+  }
+
+  .hero-main-container {
     flex-direction: column;
-    padding: 120px 6% 60px;
-    text-align: center;
+  }
+  
+  /* Esconde a imagem de desktop */
+  .hero-visual-desktop {
+    display: none;
+  }
+  /* Mostra a imagem de mobile */
+  .hero-visual-mobile {
+    display: block;
+    width: 100%;
+    margin-left: 150px;    
+    text-align: center; /* Garante que a imagem centralize se for menor */
   }
 
-  .hero-section::before {
-    /* Em telas menores, a diagonal não funciona bem. Mudamos para uma divisão horizontal */
-    clip-path: polygon(0 45%, 100% 35%, 100% 100%, 0 100%);
-  }
-
-  .hero-content, .hero-visual {
+  .hero-text-content {
     width: 100%;
     align-items: center;
     text-align: center;
+    padding-right: 0;
   }
 
-  .hero-content {
-    padding-right: 0;
-    order: 2; /* Texto vem depois da imagem */
-  }
-  .hero-visual {
-    order: 1; /* Imagem vem primeiro */
-    height: auto;
-    margin-bottom: 40px;
+  .hero-section::before {
+    /* Ajusta a diagonal para um layout vertical */
+    clip-path: polygon(0 65%, 100% 30%, 100% 100%, 0 100%);
   }
 
   .hero-title {
     font-size: 2.8rem;
+  }
+}
+
+/* Para Celulares (até 480px) */
+@media (max-width: 480px) {
+  .hero-title {
+    font-size: 2.2rem;
+  }
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+  .hero-diamond-image {
+    max-width: 80%; /* Reduz a imagem para não dominar a tela */
   }
 }

@@ -22,9 +22,7 @@ const DiamondHistory = () => {
       x: 0, 
       rotate: 0,
       transition: { 
-        duration: 1.2, // Aumentei um pouco a duração para um efeito mais suave
-        // --- AQUI ESTÁ A CORREÇÃO ---
-        // Trocamos o array inválido por uma string padrão elegante
+        duration: 1.2,
         ease: "circOut" 
       }
     }
@@ -48,18 +46,26 @@ const DiamondHistory = () => {
         whileInView="visible"
         viewport={{ once: true, amount: 0.4 }}
       >
-        {/* Coluna da Imagem (Esquerda) */}
-        <motion.div className="diamond-image-container" variants={imageVariants}>
+        {/* Imagem visível apenas no Desktop */}
+        <motion.div className="diamond-image-container-desktop" variants={imageVariants}>
           <img src={diamondImage} alt="Diamante histórico lapidado" className="diamond-image" />
         </motion.div>
 
-        {/* Coluna do Texto (Direita) */}
+        {/* Conteúdo de Texto, que agora também contém a imagem para mobile */}
         <motion.div className="diamond-text-content" variants={textVariants}>
           <span className="text-highlight">Desde a Antiguidade</span>
+          
           <h2 className="history-title">Símbolo de Poder e Prosperidade Eterna</h2>
+          
+          {/* Imagem visível apenas no Mobile */}
+          <div className="diamond-image-container-mobile">
+            <img src={diamondImage} alt="Diamante histórico lapidado" className="diamond-image" />
+          </div>
+
           <p className="history-paragraph">
             Por milênios, os diamantes foram mais que pedras preciosas; foram amuletos de reis, símbolos de força inabalável e a materialização da luz. Carregar um diamante era carregar um fragmento da eternidade. Hoje, essa herança de exclusividade e valor perpétuo está ao seu alcance.
           </p>
+          
           <blockquote className="diamond-quote">
             “Mais que uma joia, um patrimônio eterno.”
           </blockquote>
