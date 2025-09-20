@@ -140,14 +140,20 @@
   .mobile-image-banner {
     display: block;
     width: 100%;
-    max-width: 500px; /* << CONTROLE DA LARGURA DA IMAGEM */
-    height: 250px;
-    background-size: cover;
+    max-width: 300px;
+    height: 360px;
+    /* Controle de zoom da imagem */
+    background-size: 100%; 
     background-position: center;
     position: relative;
     border-radius: 16px;
     overflow: hidden;
     margin: 40px auto; /* Centraliza e adiciona espaçamento */
+    transition: background-size 0.4s ease; /* Transição suave para o hover */
+  }
+
+  .mobile-image-banner:hover {
+    background-size: 125%; /* Efeito de zoom sutil no hover */
   }
 
   .mobile-image-banner::after {
