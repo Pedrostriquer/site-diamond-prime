@@ -35,10 +35,13 @@ const FinalCTA = () => {
             Adquira agora seu diamante lapidado, certificado internacionalmente, com 2% de cashback mensal durante 12 meses e a valorização contínua dessa pedra única.
           </p>
           
-          <button className="cta-button-final">
-            <span>Quero Meu Diamond Prime Agora</span>
-            <i className="fa-solid fa-arrow-right"></i>
-          </button>
+          {/* MODIFICAÇÃO AQUI: Adicionada a tag <a> ao redor do botão */}
+          <a href="https://seu-link-aqui.com" target="_blank" rel="noopener noreferrer">
+            <button className="cta-button-final">
+              <span>Quero Meu Diamond Prime Agora</span>
+              <i className="fa-solid fa-arrow-right"></i>
+            </button>
+          </a>
         </motion.div>
 
         {/* --- COLUNA DIREITA: IMAGEM (PARA DESKTOP) --- */}

@@ -73,6 +73,9 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.5px;
+  /* As propriedades abaixo não afetam o link, podem ser removidas daqui */
+  /* text-decoration: none; */
+  /* color: inherit; */
 }
 
 .cta-button-final::before {
@@ -99,7 +102,6 @@
 .cta-button-final:active {
   transform: scale(0.95);
 }
-
 
 /* --- INÍCIO DA RESPONSIVIDADE --- */
 @media (max-width: 900px) {
@@ -136,4 +138,11 @@
   .cta-diamond-image {
     width: 80%; /* Reduz a imagem em telas bem pequenas */
   }
+}
+
+/* =================================================== */
+/* --- CORREÇÃO ADICIONADA PARA O LINK DO BOTÃO --- */
+/* =================================================== */
+.cta-text-column a {
+  text-decoration: none; /* Remove o sublinhado */
 }

@@ -66,10 +66,13 @@ const Hero = () => {
           </motion.p>
 
           <motion.div variants={itemVariants}>
-            <button className="hero-cta-button">
-              <span>Quero Saber Mais</span>
-              <i className="fa-solid fa-arrow-right"></i>
-            </button>
+            {/* MODIFICAÇÃO AQUI: Adicionada a tag <a> ao redor do botão */}
+            <a href="https://seu-link-aqui.com" target="_blank" rel="noopener noreferrer">
+              <button className="hero-cta-button">
+                <span>Quero Saber Mais</span>
+                <i className="fa-solid fa-arrow-right"></i>
+              </button>
+            </a>
           </motion.div>
         </div>
 
