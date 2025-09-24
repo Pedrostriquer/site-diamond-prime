@@ -36,7 +36,7 @@ const FinalCTA = () => {
           </p>
           
           {/* MODIFICAÇÃO AQUI: Adicionada a tag <a> ao redor do botão */}
-          <a href="https://seu-link-aqui.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://diamondprimeclient.goldenbrasil.com.br/dashboard" target="_blank" rel="noopener noreferrer">
             <button className="cta-button-final">
               <span>Quero Meu Diamond Prime Agora</span>
               <i className="fa-solid fa-arrow-right"></i>
