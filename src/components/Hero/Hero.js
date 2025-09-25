@@ -67,7 +67,7 @@ const Hero = () => {
 
           <motion.div variants={itemVariants}>
             {/* MODIFICAÇÃO AQUI: Adicionada a tag <a> ao redor do botão */}
-            <a href="https://seu-link-aqui.com" target="_blank" rel="noopener noreferrer">
+            <a href="https://diamondprimeclient.goldenbrasil.com.br/dashboard" target="_blank" rel="noopener noreferrer">
               <button className="hero-cta-button">
                 <span>Quero Saber Mais</span>
                 <i className="fa-solid fa-arrow-right"></i>
