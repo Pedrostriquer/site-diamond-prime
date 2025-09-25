@@ -62,7 +62,7 @@ const Hero = () => {
           </div>
 
           <motion.p className="hero-subtitle" variants={itemVariants}>
-            Compre seu diamante com certificação internacional, receba em casa e garanta 2% de cashback mensal durante 12 meses. Uma união perfeita entre a segurança de um ativo real e a rentabilidade digital.
+            Compre seu diamante com certificação internacional, receba em casa e garanta 2% de cashback mensal durante 12 meses. Uma união perfeita entre a segurança de um ativo real e a lucratividade digital.
           </motion.p>
 
           <motion.div variants={itemVariants}>

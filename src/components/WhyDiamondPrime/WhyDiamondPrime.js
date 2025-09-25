@@ -39,7 +39,7 @@ const WhyDiamondPrime = () => {
           </div>
 
           <p className="why-prime-paragraph">
-            Em um mercado de investimentos cada vez mais volátil, o Diamond Prime surge como um porto seguro. Combinamos a estabilidade milenar e o valor intrínseco do diamante com um modelo de negócio inovador que gera rentabilidade mensal, oferecendo o melhor dos dois mundos.
+            Em um mercado cada vez mais volátil, o Diamond Prime surge como um porto seguro. Combinamos a estabilidade milenar e o valor intrínseco do diamante com um modelo de negócio inovador que gera lucratividade mensal, oferecendo o melhor dos dois mundos.
           </p>
           
           <ul className="differentiators-list">
