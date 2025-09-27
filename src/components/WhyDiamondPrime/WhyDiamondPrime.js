@@ -6,7 +6,7 @@ import diamondImage from '../../img/diamond_prime_diamond (1).png';
 
 const differentiators = [
   { icon: 'fa-solid fa-gem', text: 'Produto físico e certificado' },
-  { icon: 'fa-solid fa-arrow-trend-up', text: 'Valorização anual de 10% a 20%' },
+  { icon: 'fa-solid fa-arrow-trend-up', text: 'Histórico anual de valorização do produto de 10% a 20%' },
   { icon: 'fa-solid fa-sack-dollar', text: 'Cashback mensal de 2%' },
   { icon: 'fa-solid fa-shield-halved', text: 'Garantia de entrega Golden Brasil' },
   { icon: 'fa-solid fa-wand-magic-sparkles', text: 'Transformação em joia exclusiva' }

@@ -60,7 +60,7 @@ const GoldenBrasilHistory = () => {
             ))}
           </div>
           <blockquote className="gb-history-quote">
-            “Golden Brasil: mais que uma empresa, uma comunidade de prosperidade.”
+            “Segurança e valorização do seu patrimônio.”
           </blockquote>
         </motion.div>
       </div>

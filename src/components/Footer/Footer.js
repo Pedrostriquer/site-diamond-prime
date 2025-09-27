@@ -24,9 +24,9 @@ const Footer = () => {
             <div className="footer-column">
               <h3>Contatos</h3>
               <p>
-                <a href="https://wa.me/5541999328683" target="_blank" rel="noopener noreferrer">(41) 99932-8683</a><br />
+                {/* <a href="https://wa.me/5541999328683" target="_blank" rel="noopener noreferrer">(41) 99932-8683</a><br /> */}
                 <a href="https://wa.me/5508000420938" target="_blank" rel="noopener noreferrer">0800 042 0938</a><br />
-                <a href="tel:08000420938">0800 042 0938</a><br />
+                {/* <a href="tel:08000420938">0800 042 0938</a><br /> */}
                 <a href="mailto:sac@goldenbrasil.com.br">sac@goldenbrasil.com.br</a>
               </p>
             </div>

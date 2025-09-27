@@ -54,12 +54,12 @@ const SocialProof = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8, ease: 'easeOut' }}
           >
-            <span className="text-highlight">Resultados Comprovados</span>
+            {/* <span className="text-highlight">Resultados Comprovados</span> */}
             <h2 className="proof-title">Construa seu Patrimônio com Segurança</h2>
             <div className="stats-container">
               <div className="stat-item">
                 <span className="stat-value">+<CountUp end={10} duration={2.5} enableScrollSpy scrollSpyOnce />% a <CountUp end={20} duration={2.5} enableScrollSpy scrollSpyOnce />%</span>
-                <span className="stat-label">Valorização Média Anual</span>
+                <span className="stat-label">Historico de valorização média anual</span>
               </div>
             </div>
           </motion.div>

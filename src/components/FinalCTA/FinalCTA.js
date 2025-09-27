@@ -32,7 +32,7 @@ const FinalCTA = () => {
           </div>
 
           <p className="cta-subtitle">
-            Adquira agora seu diamante lapidado, certificado internacionalmente, com 2% de cashback mensal durante 12 meses e a valorização contínua dessa pedra única.
+            Adquira agora seu <strong>DIAMANTE LAPIDADO</strong>, certificado internacionalmente, com 2% de cashback mensal durante 12 meses e a valorização contínua dessa pedra única.
           </p>
           
           {/* MODIFICAÇÃO AQUI: Adicionada a tag <a> ao redor do botão */}
