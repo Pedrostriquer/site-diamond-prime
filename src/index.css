@@ -23,3 +23,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+negrito { 
+    font-weight: bold; 
+    color: #1a1a1a; 
+}
+
+italico { 
+    font-style: italic; 
+    color: #444; 
+}
