@@ -3,7 +3,7 @@ import useContracts from './hooks/useContracts';
 import HeroSales from './components/HeroSales';
 import BenefitsSection from './components/BenefitsSection';
 import HeroParallax from './components/HeroParallax';
-import ContractGrid from './components/ContractGrid';
+// import ContractGrid from './components/ContractGrid';
 import Footer from '../Footer/Footer';
 import './SalesPage.css';
 
