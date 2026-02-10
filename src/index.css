@@ -15,8 +15,9 @@ html,
 body,
 #root {
   overscroll-behavior: none;
-
   overflow-x: hidden;
+  touch-action: pan-y;
+  /* Explicitly enable vertical touch scrolling on mobile */
 }
 
 body,
@@ -40,19 +41,4 @@ negrito {
 italico {
   font-style: italic;
   color: #444;
-}
-
-/* ========================================= */
-/* CORREÇÃO: Force scroll habilitado        */
-/* Override para Antigravity scroll-lock    */
-/* ========================================= */
-html body,
-html:root body,
-html body.antigravity-scroll-lock,
-html:root body.antigravity-scroll-lock {
-  overflow-x: hidden !important;
-  overflow-y: auto !important;
-  position: static !important;
-  width: auto !important;
-  height: auto !important;
 }

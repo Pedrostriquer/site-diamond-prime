@@ -10,8 +10,6 @@
   border-bottom: 1px solid #333;
   z-index: 1000;
   /* Z-index base do header */
-  pointer-events: none;
-  /* Permite touch passar através do header */
 }
 
 .header-container {
@@ -28,8 +26,6 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
-  pointer-events: auto;
-  /* Restaura interação no link */
 }
 
 .header-logo {
@@ -58,8 +54,6 @@
   display: flex;
   align-items: center;
   gap: 30px;
-  pointer-events: auto;
-  /* Restaura interação nos botões */
 }
 
 .nav-links-desktop {
@@ -116,8 +110,6 @@
   width: 30px;
   height: 22px;
   position: relative;
-  pointer-events: auto;
-  /* Garante que o hamburger seja clicável */
 }
 
 .hamburger-menu span {
