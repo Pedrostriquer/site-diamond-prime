@@ -5,30 +5,54 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  overflow-x: hidden; 
+  overflow-x: hidden;
 
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
-html, body, #root {
+
+html,
+body,
+#root {
   overscroll-behavior: none;
 
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
-body, button, input, textarea, select {
-  font-family: 'Inter', sans-serif !important; 
+body,
+button,
+input,
+textarea,
+select {
+  font-family: 'Inter', sans-serif !important;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-negrito { 
-    font-weight: bold; 
-    color: #1a1a1a; 
+
+negrito {
+  font-weight: bold;
+  color: #1a1a1a;
 }
 
-italico { 
-    font-style: italic; 
-    color: #444; 
+italico {
+  font-style: italic;
+  color: #444;
+}
+
+/* ========================================= */
+/* CORREÇÃO: Force scroll habilitado        */
+/* Override para Antigravity scroll-lock    */
+/* ========================================= */
+html body,
+html:root body,
+html body.antigravity-scroll-lock,
+html:root body.antigravity-scroll-lock {
+  overflow-x: hidden !important;
+  overflow-y: auto !important;
+  position: static !important;
+  width: auto !important;
+  height: auto !important;
 }

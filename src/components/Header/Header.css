@@ -1,5 +1,6 @@
 .header-section-fixed {
-  position: absolute; /* Header fixo que acompanha a rolagem */
+  position: absolute;
+  /* Header fixo que acompanha a rolagem */
   top: 0;
   left: 0;
   background-color: #1D1D1F;
@@ -7,7 +8,10 @@
   width: 100%;
   box-sizing: border-box;
   border-bottom: 1px solid #333;
-  z-index: 1000; /* Z-index base do header */
+  z-index: 1000;
+  /* Z-index base do header */
+  pointer-events: none;
+  /* Permite touch passar através do header */
 }
 
 .header-container {
@@ -24,6 +28,8 @@
   align-items: center;
   gap: 15px;
   text-decoration: none;
+  pointer-events: auto;
+  /* Restaura interação no link */
 }
 
 .header-logo {
@@ -52,6 +58,8 @@
   display: flex;
   align-items: center;
   gap: 30px;
+  pointer-events: auto;
+  /* Restaura interação nos botões */
 }
 
 .nav-links-desktop {
@@ -62,9 +70,15 @@
 }
 
 .nav-links-desktop button {
-  background: none; border: none; font-size: 1rem;
-  font-weight: 500; color: #dcdcdc; cursor: pointer;
-  padding: 10px 20px; border-radius: 50px; position: relative;
+  background: none;
+  border: none;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #dcdcdc;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 50px;
+  position: relative;
   transition: color 0.3s ease, background-color 0.3s ease;
 }
 
@@ -74,9 +88,14 @@
 }
 
 .header-cta-secondary {
-  background-color: #DEAB43; color: #1D1D1F;
-  border: none; padding: 10px 25px; border-radius: 50px;
-  font-size: 1rem; font-weight: 600; cursor: pointer;
+  background-color: #DEAB43;
+  color: #1D1D1F;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 50px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
   transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
@@ -89,27 +108,60 @@
 /* --- MENU MOBILE --- */
 .hamburger-menu {
   display: none;
-  background: none; border: none; cursor: pointer;
-  z-index: 10001; /* Z-index ALTO para o hamburger ficar na frente do menu */
-  width: 30px; height: 22px; position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 10000;
+  /* Z-index ALTO para o hamburger ficar na frente do menu */
+  width: 30px;
+  height: 22px;
+  position: relative;
+  pointer-events: auto;
+  /* Garante que o hamburger seja clicável */
 }
 
 .hamburger-menu span {
-  display: block; width: 100%; height: 3px; background-color: #ffffff;
-  border-radius: 3px; position: absolute;
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: #ffffff;
+  border-radius: 3px;
+  position: absolute;
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
 }
-.hamburger-menu span:nth-child(1) { top: 0; }
-.hamburger-menu span:nth-child(2) { top: 50%; transform: translateY(-50%); }
-.hamburger-menu span:nth-child(3) { bottom: 0; }
+
+.hamburger-menu span:nth-child(1) {
+  top: 0;
+}
+
+.hamburger-menu span:nth-child(2) {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.hamburger-menu span:nth-child(3) {
+  bottom: 0;
+}
 
 /* Animação para "X" */
 .hamburger-menu.active span {
-  background-color: #DEAB43; /* Cor dourada quando o menu está aberto */
+  background-color: #DEAB43;
+  /* Cor dourada quando o menu está aberto */
 }
-.hamburger-menu.active span:nth-child(1) { transform: rotate(45deg); top: 50%; }
-.hamburger-menu.active span:nth-child(2) { opacity: 0; }
-.hamburger-menu.active span:nth-child(3) { transform: rotate(-45deg); top: 50%; }
+
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg);
+  top: 50%;
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg);
+  top: 50%;
+}
 
 
 /* Camada de fundo do menu mobile */
@@ -124,7 +176,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 10000; /* Z-INDEX MUITO ALTO para ficar na frente de TUDO */
+  z-index: 1000;
+  /* Z-INDEX MUITO ALTO para ficar na frente de TUDO */
 }
 
 /* Lista de links no mobile */
@@ -138,15 +191,18 @@
 }
 
 .nav-links-mobile button {
-  background: none; border: none;
+  background: none;
+  border: none;
   font-size: 1.8rem;
   font-weight: 600;
   color: #ffffff;
   transition: color 0.3s ease;
 }
+
 .nav-links-mobile button:hover {
   color: #DEAB43;
 }
+
 .header-cta-secondary.mobile {
   margin-top: 20px;
   width: 250px;
@@ -160,6 +216,7 @@
   .header-right-content {
     display: none;
   }
+
   .hamburger-menu {
     display: block;
   }
