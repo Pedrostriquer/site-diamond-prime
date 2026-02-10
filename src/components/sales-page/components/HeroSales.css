@@ -126,7 +126,7 @@
 
 .hero-sales-text {
     flex: 1;
-    max-width: 600px;
+    max-width: 680px;
 }
 
 .brand-security {
@@ -200,7 +200,7 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    margin-right: -200px;
+    margin-right: -300px;
 }
 
 .hero-sales-image img {
