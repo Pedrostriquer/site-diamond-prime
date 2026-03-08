@@ -159,40 +159,57 @@
 @media (max-width: 768px) {
     .diamond-card {
         height: auto;
+        max-width: 310px;
+        margin: 0 auto;
     }
 
     .diamond-card-image-container {
-        height: 180px;
+        height: 140px;
     }
 
     .diamond-card-content {
-        padding: 1rem;
+        padding: 0.75rem;
+        gap: 0.6rem;
     }
 
     .diamond-card-title {
-        font-size: 1.1rem;
+        font-size: 1rem;
     }
 
     .diamond-price-value {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
+    }
+
+    .diamond-price-label {
+        font-size: 0.7rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .diamond-card-price-section {
+        padding: 0.6rem;
+        margin: 0.25rem 0;
     }
 
     .diamond-card-description {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         line-clamp: 2;
         -webkit-line-clamp: 2;
     }
 
     .diamond-card-features {
-        padding: 0.75rem;
+        padding: 0.6rem;
     }
 
     .diamond-feature {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
+    }
+
+    .diamond-feature i {
+        font-size: 0.95rem;
     }
 
     .diamond-card-button {
-        padding: 0.85rem;
-        font-size: 0.85rem;
+        padding: 0.7rem;
+        font-size: 0.8rem;
     }
 }
